@@ -22,6 +22,8 @@ User Stories
 
 - Create an express app that listens on port 3000. Ensure that you have installed the necessary npm packages to run an express server and render templates. You can refer back to old code and lessons but **TYPE IT OUT.  DO NOT PASTE.** 
 
+- Don't forget to `.gitignore` your `node_modules`!!!
+
 &#x1F534; **Commit:** "Server is set up and running"
 
 
