@@ -168,7 +168,11 @@ The updating should be handled via a PUT request to the `/pokemon/:id` route. Af
 &#x1F534; **Commit.** "User can update the info for a pokemon"
 
 
-# NICE. You're done! Push and make a pull request.  Then finish your old homework.
+---
+
+### NICE. You're done! Push and make a pull request.  This assignment, and all assignments are due at the beginning the day after they are assigned unless otherwise specified. 
+
+---
 
 
 ## Hungry for more?
