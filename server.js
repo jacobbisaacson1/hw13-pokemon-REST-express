@@ -6,6 +6,17 @@ const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
 
 
+app.use(express.static('public'))
+
+app.use(methodOverride('_method'))
+
+app.get('/pokemon/new', (req, res) => {
+    res.render("new.ejs")
+})
+
+
+
+
 
 
 
