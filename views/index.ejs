@@ -1,18 +1,15 @@
 <%- include('./partials/header.ejs') %>
+<ul>
+	<%  for(let i = 0; i <AllPokemon.length; i++){   %>
+		<li> 
+			<a href="/pokemon/<%= i %>"><%=   AllPokemon[i].name   %></a>
+			<a href="/pokemon/<%= i %>/edit"> Edit </a>
+		</li>
 
-<h1>Add a pokemon</h1>
-  <form method="POST" action="/pokemon">
 
-	<fieldset>
-	 <label for="name">Name:</label>
-      <input id="name" type="text" name="name" placeholder="New Pokemon" />
-	</fieldset>
-	<fieldset>
-		<label for="img">img link</label>
-		<input type="img" name="img" placeholder="link image"/>
-	</fieldset>
-	<button> ADD Pokemon </button>
+		<%  }  %>
+	
+</ul>
 
-</form>
 
 <%- include('./partials/footer.ejs') %>

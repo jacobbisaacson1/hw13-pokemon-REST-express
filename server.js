@@ -42,7 +42,16 @@ app.post("/pokemon", (req, res) => {
     res.redirect('/pokemon')
 })
 
+app.get('/pokemon/:id/edit', (req, res) => {
 
+    const pokemonToEdit = pokemon[req.params.id]
+
+    // send fruit data to template
+    res.render('edit.ejs', {
+        pokemon: pokemonToEdit,
+        indexOfPokemonToEdit: req.params.id
+    })
+})
 
 
 
