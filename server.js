@@ -30,7 +30,17 @@ app.get("/pokemon/:id", (req, res) => {
 
 })
 
+app.post("/pokemon", (req, res) => {
 
+    console.log(req.body)
+    const pokemonToAdd = {
+        name: req.body.name,
+        img: req.body.img
+    }
+
+    pokemon.push(pokemonToAdd)
+    res.redirect('/pokemon')
+})
 
 
 
