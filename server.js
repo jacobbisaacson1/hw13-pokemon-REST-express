@@ -3,12 +3,11 @@ const express = require('express')
 const app = express()
 const pokemon = require('./models/pokemon.js')
 const bodyParser = require('body-parser')
-// const methodOverride = require('method-override')
+
 
 
 app.use(express.static('public'))
 
-// app.use(methodOverride('_method'))
 
 app.get('/pokemon/new', (req, res) => {
     res.render("new.ejs")
@@ -30,6 +29,11 @@ app.get("/pokemon/:id", (req, res) => {
 
 })
 
+app.get('/pokemon/new', (req, res) => {
+    res.render("new.ejs")
+
+})
+
 app.post("/pokemon", (req, res) => {
 
     console.log(req.body)
@@ -37,7 +41,6 @@ app.post("/pokemon", (req, res) => {
         name: req.body.name,
         img: req.body.img
     }
-
     pokemon.push(pokemonToAdd)
     res.redirect('/pokemon')
 })
@@ -45,12 +48,20 @@ app.post("/pokemon", (req, res) => {
 app.get('/pokemon/:id/edit', (req, res) => {
 
     const pokemonToEdit = pokemon[req.params.id]
-
-    // send fruit data to template
     res.render('edit.ejs', {
         pokemon: pokemonToEdit,
         indexOfPokemonToEdit: req.params.id
     })
+})
+
+app.put('/pokemon/:id', (req, res) => {
+    const edittedPokemon = {
+        name: req.body.name,
+        img: req.body.img
+    }
+    pokemon[req.params.id] = edittedPokemon
+    res.redirect('/pokemon')
+
 })
 
 
