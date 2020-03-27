@@ -1,10 +1,12 @@
   
 <%- include('./partials/header.ejs') %>
 
+	<h1><%=  thisPokemon.name  %><br>
+	<img src=<%= thisPokemon.img %>>
+	<form method="POST" action="/pokemon/<%= indexOfPokemonToDelete %>?_method=DELETE">
 
-
-
-
+		<button type = submit>Delete</button>
+</form>
 
 
 

@@ -1,11 +1,22 @@
   
 <%- include('./partials/header.ejs') %>
 
+<h1>Add a pokemon</h1>
+  <form method="POST" action="/pokemon">
+
+	<fieldset>
+	 <label for="name">Name:</label>
+      <input id="name" type="text" name="name" placeholder="New Pokemon" />
+	</fieldset>
+	<fieldset>
+		<label for="img">img link</label>
+		<input type="img" name="img" placeholder="link image"/>
+	</fieldset>
+	<button> ADD Pokemon </button>
 
 
 
-
-
+</form>
 
 
 

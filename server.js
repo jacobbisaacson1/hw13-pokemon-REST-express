@@ -15,6 +15,27 @@ app.get('/pokemon/new', (req, res) => {
 })
 
 
+app.get("/pokemon", (req, res) => {
+    res.render('index.ejs', {
+        AllPokemon: pokemon
+    })
+
+})
+
+
+app.get("/pokemon/:id", (req, res) => {
+    res.render("show.ejs", {
+        thisPokemon: pokemon[req.params.id],
+        indexOfPokemonToDelete: req.params.id
+    })
+
+})
+
+
+
+
+
+
 
 
 
