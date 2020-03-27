@@ -9,15 +9,15 @@ const bodyParser = require('body-parser')
 app.use(express.static('public'))
 
 
-app.get('/pokemon/new', (req, res) => {
-    res.render("new.ejs")
-})
-
-
 app.get("/pokemon", (req, res) => {
     res.render('index.ejs', {
-        AllPokemon: pokemon
+        AllPokemon: pokemon,
     })
+
+})
+
+app.get('/pokemon/new', (req, res) => {
+    res.render("new.ejs")
 
 })
 
@@ -29,19 +29,20 @@ app.get("/pokemon/:id", (req, res) => {
 
 })
 
-app.get('/pokemon/new', (req, res) => {
-    res.render("new.ejs")
-
-})
-
 app.post("/pokemon", (req, res) => {
-
     console.log(req.body)
     const pokemonToAdd = {
         name: req.body.name,
         img: req.body.img
     }
     pokemon.push(pokemonToAdd)
+    res.redirect('/pokemon')
+})
+
+
+app.delete('/pokemon/:id', (req, res) => {
+    const indexOfPokemonToDelete = req.params.id
+    pokemon.splice(indexOfPokemonToDelete, 1)
     res.redirect('/pokemon')
 })
 
@@ -63,8 +64,6 @@ app.put('/pokemon/:id', (req, res) => {
     res.redirect('/pokemon')
 
 })
-
-
 
 
 
