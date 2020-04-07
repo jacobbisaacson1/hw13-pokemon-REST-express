@@ -1,12 +1,26 @@
 <%- include('./partials/header.ejs') %>
 
-	<ul>
+	<h1>Pokemon</h1>
 
+	<ul class="pokemon">
+		
 		<% for(let i = 0; i < pokemon.length; i++) { %>
-			<li class="pokemon"><%= pokemon[i].name %></li>
+			<li>
+				<div id="container-one">
+					<a href="/pokemon/<%= i %>"><%= pokemon[i].name %></a> 	
+				<div>	
+					<a href="/pokemon/<%=i%>/edit">Edit</a>
+				</div>
+					<form method="POST" action="/pokemon/<%= i %>?_method=DELETE">
+						<button>Delete</button>
+					</form>
+				</div>
+				<div id="container-two">
+					<img src="<%= pokemon[i].img %>">
+				</div>
+			</li>
 		<% } %>
 
 	</ul>
-
 
 <%- include('./partials/footer.ejs') %>

@@ -1,25 +1,20 @@
-
+  
 <%- include('./partials/header.ejs') %>
 
-<h1>Edit Pokemon</h1>
-  <form method="POST" action="/pokemon/<%=  indexOfPokemonToEdit  %>?_method=PUT">
+<form method="POST" action="/pokemon/<%=index%>?_method=PUT">
+	
+	<fieldset>
+		<label for="name">Name:</label>
+		<input id="name" type="text" name="name" placeholder="Enter Pokemon name" value="<%=pokemon.name%>">
+	</fieldset>
 
 	<fieldset>
-	 <label for="name">Name: </label>
-      <input id="name" type="text" name="name" placeholder="New Pokemon" value="
-      <%=  pokemon.name  %>"/>
+		<label for="image">Image:</label>
+		<input id="image" type="text" name="image" value="<%=pokemon.img%>">
 	</fieldset>
-	<fieldset>
-		<label for="img">img link</label>
-		<input type="img" name="img" placeholder="link image" value=" 
-		<%=  pokemon.img  %>"/>
-	</fieldset>
-	<button> Edit Pokemon </button>
 
-
+	<button>Update Pokemon</button>
 
 </form>
-
-
 
 <%- include('./partials/footer.ejs') %>
