@@ -1,15 +1,12 @@
 <%- include('./partials/header.ejs') %>
-<ul>
-	<%  for(let i = 0; i <AllPokemon.length; i++){   %>
-		<li> 
-			<a href="/pokemon/<%= i %>"><%=   AllPokemon[i].name   %></a>
-			<a href="/pokemon/<%= i %>/edit"> Edit </a>
-		</li>
 
+	<ul>
 
-		<%  }  %>
-	
-</ul>
+		<% for(let i = 0; i < pokemon.length; i++) { %>
+			<li class="pokemon"><%= pokemon[i].name %></li>
+		<% } %>
+
+	</ul>
 
 
 <%- include('./partials/footer.ejs') %>

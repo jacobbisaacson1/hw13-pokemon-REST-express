@@ -1,0 +1,25 @@
+{
+  "name": "hw13-express-rest-pokemon",
+  "version": "1.0.0",
+  "description": "Make a Pokemon app that displays data inside server-side rendered views.",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "method-override": "^3.0.0",
+    "node": "^13.12.0",
+    "nodemon": "^2.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.generalassemb.ly/jacobbisaacson/hw13-express-REST-pokemon.git"
+  },
+  "author": "",
+  "license": "ISC"
+}
